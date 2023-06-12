@@ -18,5 +18,5 @@ jobs:
       - name: Run Nargo test
         run: |
           # TODO: recursively test all the circuits
-          cd circuits/example/hello-world
+          cd circuits/examples/hello-world
           nargo test
