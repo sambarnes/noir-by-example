@@ -5,7 +5,7 @@
   publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.101.0"
+  HUGO_VERSION = "0.113.0"
 
 [[plugins]]
   package = "netlify-plugin-cypress"
