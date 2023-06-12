@@ -1,0 +1,22 @@
+name: CI
+on:
+  push:
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Nargo
+        uses: noir-lang/noirup@v0.1.2
+        with:
+          toolchain: stable
+
+      - name: Run Nargo test
+        run: |
+          # TODO: recursively test all the circuits
+          cd circuits/example/hello-world
+          nargo test

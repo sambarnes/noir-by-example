@@ -1,0 +1,112 @@
+/*
+  58 bytes of CSS to look great nearly everywhere
+  See: https://gist.github.com/JoeyBurzynski/617fb6201335779f8424ad9528b72c41
+
+  When making this website, I wanted a simple, reasonable way to make it
+  look good on most displays. Not counting any minimization techniques,
+  the following 58 bytes worked well for me:
+
+  html {
+    max-width: 38rem;
+    padding: 2rem;
+    margin: auto;
+  }
+
+  let's break this down:
+
+  max-width: 38rem
+  it appears that the default font size for most browsers is 16px, so 38rem is 608px.
+  supporting 600px displays at a minimum seems reasonable.
+
+  padding: 2rem
+  if the display's width goes under 38rem, then this padding keeps things looking
+  pretty good until around 256px. while this may seem optional, it actually hits
+  two birds with one stone - the padding also provides sorely-needed top and bottom
+  whitespace.
+
+  margin: auto
+  this is really all that is needed to center the page, because main is a block
+  element under semantic html5.
+
+  a key insight: it took me a surprising number of iterations to arrive at this point.
+  perhaps that speaks to the fact that i know nothing about "modern" web development,
+  or, as i'm more inclined to believe, just how hard it is to keep it simple in a world
+  of complication.
+
+  update 1: following some discussion, I've since changed the padding to 1.5rem for a
+  happier compromise between mobile and desktop displays.
+
+  update 2: the ch unit was brought to my attention, and I quite like it! I've since
+  changed to 70ch/2ch, which looks nearly the same with 2 less bytes, except that the
+  padding is a little bit smaller (a good thing for mobile).
+
+
+
+  100 Bytes of CSS to look great everywhere (enhanced version)
+
+  html {
+    max-width: 70ch;
+    padding: 3em 1em;
+    margin: auto;
+    line-height: 1.75;
+    font-size: 1.25em;
+  }
+
+  This should be simple drop-in css to look good on most displays.
+
+  Let's break this down. I've adapted the original text with my own commentary.
+
+  max-width: 70ch
+  the "readable range" is usually 60-80 character widths, and CSS lets you express that
+  directly with the ch unit.
+
+  padding: 3em 1em
+  If the display's width goes under the max-width set above, then this padding prevents
+  edge-to-edge text on mobile. We use 3em to provide top/bottom whitespace.
+
+  margin: auto
+  This is really all that is needed to center the page - applied on html, because Dan's
+  site doesnt have a semantic tag and is more likely to exist in most sites. That the
+  top tag centers itself relative to nothing is unintuitive, but thats how browsers do.
+
+  line-height: 1.75
+  Spacing between the lines to help increase visual clarity. Always leave line height
+  unitless because reasons.
+
+  font-size: 1.5em
+  I've noticed that recent design trends and screen sizes have tended toward bigger font sizes.
+  Or maybe I'm getting old. Prefer em or rem over px if you want to let users scale it.
+
+  You can use :root instead of <html> to guarantee that there is some selector present,
+  but its a touch too fancy for me and uses an extra character :)
+*/
+
+html {
+  font-family: sans-serif;
+  font-size: 1.5em;
+  line-height: 1.75;
+  margin: auto;
+  max-width: 70ch;
+  padding: 3em 1em;
+}
+
+img {
+  width: 100%;
+}
+
+/* Optional 100 more bytes */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 3em 0 1em;
+}
+
+p,
+ul,
+ol {
+  color: #1d1d1d;
+  margin-bottom: 2em;
+}

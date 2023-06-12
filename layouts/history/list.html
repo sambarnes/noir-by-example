@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div id="content">
+
+    <h4>a history of the language,</h4>
+    <p>its features, and tooling, leading up to mainnet launch</p>
+
+    <div class="resource-list">
+        <ul>
+            {{ range .Pages.ByDate }}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+{{ end }}

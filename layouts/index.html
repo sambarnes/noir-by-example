@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div id="content">
+
+  <pre>
+curl -L https://raw.githubusercontent.com/noir-lang/noirup/main/install | bash
+noirup --version nightly
+  </pre>
+
+  <h4>an introduction to <a href="https://noir-lang.org/">Noir</a>, with simple examples</h4>
+  <div class="resource-list">
+    <ul>
+      {{ $examples := (where .Site.RegularPages.ByDate "Type" "examples")}}
+      {{ range first 5 $examples }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+      <li>
+        <a href="/examples">...</a>
+      </li>
+    </ul>
+  </div>
+
+  <h4>and a history of the language</h4>
+  <div class="resource-list">
+    <ul>
+      {{ range first 3 (where .Site.RegularPages "Type" "history") }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+      <li>
+        <a href="/history">...</a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+{{ end }}
