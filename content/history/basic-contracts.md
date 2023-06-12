@@ -1,7 +1,7 @@
 ---
 title: "basic contract syntax"
 date: 2023-06-10T09:06:14-06:00
-draft: true
+draft: false
 ---
 
 `TODO: flesh out the concept of these pages -- follow along the with new releases of noir, documenting how the contract functionality evolves leading up to mainnet launch`
