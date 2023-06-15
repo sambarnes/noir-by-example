@@ -17,6 +17,21 @@ jobs:
 
       - name: Run Nargo test
         run: |
-          # TODO: recursively test all the circuits
-          cd circuits/examples/hello-world
-          nargo test
+          cd circuits/examples
+          failed=0
+          for d in */ ; do
+            echo "\n\n🏃‍♀️ Running: $d"
+            cd $d
+            if nargo test; then
+              echo "✅ Passed: $d"
+            else
+              echo "❌ Failed: $d"
+              failed=1
+            fi
+            cd ..
+          done
+          if [[ $failed -eq 1 ]]; then
+            echo "One or more tests failed"
+            exit 1
+          fi
+          
