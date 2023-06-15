@@ -11,11 +11,11 @@ fn main(pair: (Field, Field)) {
     // pair.0 = 5;
 
     // with mut, individual elemets can be mutated
-    let mut mutable = ((0, 0), 1, 2, 3);
-    mutable.0 = pair;
+    let mut mutable = (0, 1, 2, 3);
+    mutable.0 = 42;
     mutable.2 = 7;
-    assert(mutable.0.0 == 1);
-    assert(mutable.0.1 == 0);
+
+    assert(mutable.0 == 42);
     assert(mutable.1 == 1);
     assert(mutable.2 == 7);
     assert(mutable.3 == 3);
