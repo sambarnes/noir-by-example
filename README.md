@@ -1,6 +1,6 @@
 # noirup & running
 
-🚧 WIP: https://noirup-and-running.netlify.app/
+🚧 WIP: https://noirup.org/
 
 an introduction to [Noir](https://noir-lang.org), with simple examples
 
