@@ -2,6 +2,25 @@
     <h3>{{ .Title }}</h3>
     {{ .Content }}
 
+    <br>
+    <details>
+        <summary><i>try it out</i></summary>
+
+        install the noir toolchain if you haven't yet:
+        <pre>
+        curl -L https://raw.githubusercontent.com/noir-lang/noirup/main/install | bash
+        noirup --version nightly
+        </pre>
+
+        then checkout and run the example:
+        <pre>
+        git clone https://github.com/sambarnes/noirup-and-running.git
+        cd noirup-and-running/circuits/{{ replace .Path ".md" "" }}
+        nargo test --show-output
+        </pre>
+    </details>
+    <br>
+
     {{- $prev := .PrevInSection }}
     {{- $next := .NextInSection }}
     <div style="display: flex; justify-content: space-between;">
