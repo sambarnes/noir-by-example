@@ -20,7 +20,8 @@ jobs:
           cd circuits/examples
           failed=0
           for d in */ ; do
-            echo "\n\n🏃‍♀️ Running: $d"
+            echo ""
+            echo "🏃‍♀️ Running: $d"
             cd $d
             if nargo test; then
               echo "✅ Passed: $d"
