@@ -13,24 +13,29 @@ jobs:
       - name: Install Nargo
         uses: noir-lang/noirup@v0.1.2
         with:
-          toolchain: stable
+          toolchain: 0.6.0
 
       - name: Run Nargo test
         run: |
           cd circuits/examples
           failed=0
+
           for d in */ ; do
             echo ""
             echo "🏃‍♀️ Running: $d"
             cd $d
+
             if nargo test; then
               echo "✅ Passed: $d"
             else
               echo "❌ Failed: $d"
               failed=1
             fi
+
             cd ..
+
           done
+
           if [[ $failed -eq 1 ]]; then
             echo "One or more tests failed"
             exit 1
