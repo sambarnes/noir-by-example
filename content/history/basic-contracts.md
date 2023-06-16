@@ -10,7 +10,7 @@ draft: false
 
 [feat: Implement basic contracts (#944)](https://github.com/noir-lang/noir/pull/944)
 
-a `nargo compile --contracts` command was included to compile all functions declared in a `contrac`t as if they were a separate main function
+a `nargo compile --contracts` command was included to compile all functions declared in a `contract` as if they were a separate main function
 
 ```rust
 fn main(x : Field, y : pub Field) {
