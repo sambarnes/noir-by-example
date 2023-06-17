@@ -6,6 +6,7 @@ fn main() -> pub Field {
 
     // cannot be mutable tho, so this would fail
     // let mut bad_var: comptime Field = 3;
+    // bad_var = 4;
 
     known_at_compile_time + inferred_known
 }
