@@ -24,7 +24,7 @@ noirup --version 0.6.0
   <h4>and a history of the language</h4>
   <div class="resource-list">
     <ul>
-      {{ range first 3 (where .Site.RegularPages "Type" "history") }}
+      {{ range first 3 (where .Site.RegularPages.ByDate "Type" "history") }}
       <li>
         <a href="{{ .Permalink }}">{{ .Title }}</a>
       </li>
