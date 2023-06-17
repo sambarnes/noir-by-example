@@ -1,5 +1,5 @@
 ---
-title: "basic contract syntax"
+title: "basic contracts & abi"
 date: 2023-06-10T09:06:14-06:00
 draft: false
 ---
@@ -7,7 +7,7 @@ draft: false
 * [feat: Implement basic contracts (#944)](https://github.com/noir-lang/noir/pull/944)
 * [feat(nargo): save program ABI alongside ACIR (#922)](https://github.com/noir-lang/noir/pull/922)
 
-a `nargo compile --contracts` command was included to compile all functions declared in a `contract` as if they were a separate main function
+all functions declared in a `contract` get compiled as if they were separate main functions
 
 ```rust
 fn main(x : Field, y : pub Field) {
