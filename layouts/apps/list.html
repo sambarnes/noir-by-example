@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div id="content">
+
+    <h4>intentionally simplified applications</h4>
+
+    <div class="resource-list">
+        <ul>
+            {{ range .Pages.ByDate }}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+{{ end }}

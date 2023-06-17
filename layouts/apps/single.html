@@ -1,0 +1,40 @@
+{{ define "main" }}
+<h3>{{ .Title }}</h3>
+{{ .Content }}
+
+<br>
+<details>
+    <summary><i>try it out</i></summary>
+
+    install the noir toolchain if you haven't yet:
+    <pre>
+        curl -L https://noirup.org/install | bash
+        noirup --version 0.6.0
+        </pre>
+
+    then checkout and run the example:
+    <pre>
+        git clone https://github.com/sambarnes/noir-by-example.git
+        cd noir-by-example/circuits/{{ replace .Path ".md" "" }}
+        nargo test --show-output
+        </pre>
+</details>
+<br>
+
+{{- $prev := .PrevInSection }}
+{{- $next := .NextInSection }}
+<div style="display: flex; justify-content: space-between;">
+    {{- if $prev }}
+    <a href="{{ $prev.Permalink }}">prev ({{ $prev.Title }})</a>
+    {{- else }}
+    <p>...</p>
+    {{- end }}
+
+    {{- if $next }}
+    <a href="{{ $next.Permalink }}">next ({{ $next.Title }})</a>
+    {{- else }}
+    <p>...</p>
+    {{- end }}
+</div>
+
+{{ end }}

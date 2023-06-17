@@ -21,6 +21,20 @@ noirup --version 0.6.0
     </ul>
   </div>
 
+  <h4>primitive applications</h4>
+  <div class="resource-list">
+    <ul>
+      {{ range first 5 (where .Site.RegularPages.ByDate "Type" "apps") }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+      <li>
+        <a href="/apps">...</a>
+      </li>
+    </ul>
+  </div>
+
   <h4>and a history of the language</h4>
   <div class="resource-list">
     <ul>
