@@ -6,8 +6,7 @@ fn main() {
     let mut mutable_var = immutable_var;
     mutable_var = 38;
 
-    // variables cannot go unused, try deleting this lines
-    assert(immutable_var != mutable_var);
+    assert(mutable_var != immutable_var);
 }
 
 #[test]
