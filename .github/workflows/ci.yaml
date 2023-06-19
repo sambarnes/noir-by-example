@@ -42,7 +42,7 @@ jobs:
             exit 1
           fi
 
-  applications:
+  gadgets:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -54,7 +54,7 @@ jobs:
 
       - name: Run Nargo test
         run: |
-          cd circuits/apps
+          cd circuits/gadgets
           failed=0
 
           for d in */ ; do

@@ -21,30 +21,16 @@ noirup --version 0.6.0
     </ul>
   </div>
 
-  <h4>primitive applications</h4>
+  <h4>and basic zk gadgets</h4>
   <div class="resource-list">
     <ul>
-      {{ range first 5 (where .Site.RegularPages.ByDate "Type" "apps") }}
+      {{ range first 5 (where .Site.RegularPages.ByDate "Type" "gadgets") }}
       <li>
         <a href="{{ .Permalink }}">{{ .Title }}</a>
       </li>
       {{ end }}
       <li>
-        <a href="/apps">...</a>
-      </li>
-    </ul>
-  </div>
-
-  <h4>and a history of the language</h4>
-  <div class="resource-list">
-    <ul>
-      {{ range first 3 (where .Site.RegularPages.ByDate "Type" "history") }}
-      <li>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
-      </li>
-      {{ end }}
-      <li>
-        <a href="/history">...</a>
+        <a href="/gadgets">...</a>
       </li>
     </ul>
   </div>
