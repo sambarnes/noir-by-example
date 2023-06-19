@@ -8,7 +8,9 @@
         {{- block "main" . }}{{- end }}
     </div>
 
+    {{- if not .IsPage }}
     <script src="/oneko.js"></script>
+    {{- end }}
 </body>
 
 </html>
