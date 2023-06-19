@@ -19,7 +19,7 @@ in this example project,
 
 we declare the `foo` module in our main entrypoint
 
-```rust
+```rust {.codebox}
 mod foo; // <-- declare the foo module
 
 fn main(x: Field) {
@@ -34,7 +34,7 @@ fn test_main() {
 
 its implementation lives in `foo.nr` at the same folder depth,
 
-```rust
+```rust {.codebox}
 mod bar; // <-- declare the nested bar module
 
 fn hello(x : Field) -> Field {
@@ -44,7 +44,7 @@ fn hello(x : Field) -> Field {
 
 while the `bar` module's implementation goes under a `foo` folder, inside `bar.nr`
 
-```rust
+```rust {.codebox}
 fn goodbye(x : Field) -> Field {
     x - 1
 }

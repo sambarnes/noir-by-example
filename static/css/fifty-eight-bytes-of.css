@@ -110,3 +110,9 @@ ol {
   color: #1d1d1d;
   margin-bottom: 2em;
 }
+
+/* few more from me */
+.codebox {
+  overflow-x: auto;
+  background-color: #272822;
+}

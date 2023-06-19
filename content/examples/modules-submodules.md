@@ -6,7 +6,7 @@ draft: false
 
 not to be confused with [nested modules](/examples/modules-nested), a submodule has in-line implementation
 
-```rust
+```rust {.codebox}
 use mysubmodule::foo;
 
 fn main() {

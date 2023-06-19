@@ -8,7 +8,7 @@ structs group together multiple related values, with a name for each field
 
 define custom functions on them using `impl` blocks
 
-```rust
+```rust {.codebox}
 struct Foo {
     bar: Field,
     baz: [Field; 2],

@@ -6,7 +6,7 @@ draft: false
 
 the `use` keyword imports a dependency into scope
 
-```rust
+```rust {.codebox}
 use dep::std;
 
 fn main() {

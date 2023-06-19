@@ -8,7 +8,7 @@ similar to arrays, a tuple is a list of values, but elements don't need to share
 
 another difference is element access, using a `some_tuple.1` notation vs the typical `some_array[1]` bracket notation seen with arrays
 
-```rust
+```rust {.codebox}
 fn main(pair: (Field, Field)) {
     assert(pair.0 == 1);
     assert(pair.1 == 0);

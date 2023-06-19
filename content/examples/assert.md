@@ -6,7 +6,7 @@ draft: false
 
 to ensure some property holds true, use `assert(...)`
 
-```rust
+```rust {.codebox}
 fn main(x : Field, y : pub Field) {
     assert(x != y);
 }

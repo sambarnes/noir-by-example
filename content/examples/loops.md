@@ -6,7 +6,7 @@ draft: false
 
 a `for` loop can be written a few ways, depending on your needs
 
-```rust
+```rust {.codebox}
 use dep::std;
 
 fn main() {

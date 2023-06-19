@@ -6,7 +6,7 @@ draft: false
 
 noir supports conditionals through typical `if` / `else if` / `else` chains
 
-```rust
+```rust {.codebox}
 fn main(foo: u32, mut bar: [u32; 2]) -> pub bool {
     if foo == bar[0] {
         true

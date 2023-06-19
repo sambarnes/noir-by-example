@@ -8,7 +8,7 @@ functions can be passed around like variables, just reference its name
 
 noir also supports both lambdas and closures
 
-```rust
+```rust {.codebox}
 fn foo(x: Field) -> Field { x }
 fn bar(x: Field) -> Field { x + 1 }
 

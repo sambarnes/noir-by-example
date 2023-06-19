@@ -8,7 +8,7 @@ currently, there's no official enum support in the language
 
 however, a submodule with globals can kinda compensate
 
-```rust
+```rust {.codebox}
 mod OrderType {
     global FULL_OPEN: Field = 0;
     global PARTIAL_OPEN: Field = 1;

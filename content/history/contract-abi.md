@@ -8,7 +8,7 @@ draft: false
 
 each function in a contract is compiled as a separate noir program
 
-```rust
+```rust {.codebox}
 contract Foo {
     fn double(x: Field) -> pub Field { x * 2 }
     fn triple(x: pub Field) -> pub Field { x * 3 }

@@ -6,7 +6,7 @@ draft: false
 
 while witness variables are expected to change per proof, any `comptime` values are known at compile time
 
-```rust
+```rust {.codebox}
 fn main() -> pub Field {
     let known_at_compile_time: comptime Field = 1;
 

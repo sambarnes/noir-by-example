@@ -12,7 +12,7 @@ the voter set is represented by a merkle tree, where each leaf is a "commitment"
 
 a smol helper can generate the tree (assuming private keys 0, 1, 2, 3 and a secret 9)
 
-```rust
+```rust {.codebox}
 use dep::std;
 
 #[test]
@@ -60,7 +60,7 @@ phrased differently, when casting a vote from some random account, they need to 
 * the group secret
 * the merkle branch (or hash path) that combines those inputs into the final root
 
-```rust
+```rust {.codebox}
 fn main(
     root: pub Field,         // the "group id" for the voters
     proposal_id: pub Field,  // the individual topic being voted on
@@ -90,7 +90,7 @@ fn main(
 
 the functionality can be exercised with a simplified test:
 
-```rust
+```rust {.codebox}
 #[test]
 fn test_main() {
     // prove a vote for the 0th voter

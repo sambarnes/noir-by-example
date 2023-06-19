@@ -16,7 +16,7 @@ in this example project,
 
 the `foo` module holds some logic
 
-```rust
+```rust {.codebox}
 fn hello(x : Field) -> Field {
     x
 }
@@ -27,7 +27,7 @@ fn hi(x : Field) -> Field {
 ```
 
 and the main entrypoint can call it
-```rust
+```rust {.codebox}
 mod foo; // <-- declare the foo module
 
 fn main(x: Field, y: pub Field) {

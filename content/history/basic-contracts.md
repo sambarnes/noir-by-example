@@ -6,7 +6,7 @@ draft: false
 
 when contracts were [first implemented](https://github.com/noir-lang/noir/pull/944), the look and feel largely mimicked noir's [submodules](/examples/modules-submodules)
 
-```rust
+```rust {.codebox}
 contract Foo {
     fn double(x: Field) -> pub Field { x * 2 }
     open fn triple(x: Field) -> pub Field { x * 3 }

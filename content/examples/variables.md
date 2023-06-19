@@ -8,7 +8,7 @@ store data in variables with the `let` keyword
 
 if you need to change that data, it must be marked "mutable" with `mut`
 
-```rust
+```rust {.codebox}
 fn main() {
     let immutable_var = 17;
     // immutable_var = 38;  <-- fails to compile

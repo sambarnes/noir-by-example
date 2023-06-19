@@ -6,7 +6,7 @@ draft: false
 
 strings are fixed length values in noir `str<N>`
 
-```rust 
+```rust {.codebox} 
 use dep::std;
 
 fn main(

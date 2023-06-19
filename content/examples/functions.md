@@ -8,7 +8,7 @@ a simple way to organize your logic
 
 to return a value, remove the semicolon at the end of the line
 
-```rust
+```rust {.codebox}
 // they take inputs and -> return outputs
 fn add_one(x: Field) -> Field {
     x + 1
