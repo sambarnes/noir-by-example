@@ -1,16 +1,17 @@
-<img src="./static/img/card.png"  width="400" height="200">
+<p align="center">
+    <img src="./static/img/card.png" width="400" height="200">
+</p>
 
----
+<br>
+<p align="center">
+    an introduction to <a href="https://noir-lang.org">Noir</a><br>
+    with simple examples & basic zk gadgets
+</p>
 
 <br>
 
-an introduction to [Noir](https://noir-lang.org)
-
-with simple examples & basic zk gadgets
-
-<br>
-
-**acknowledgements:**
-
-* the og [solidity by example](https://solidity-by-example.org/)
-* many examples adapted [from source in the noir repo](https://github.com/noir-lang/noir/tree/master/crates/nargo_cli/tests/test_data)
+<p align="center">
+    acknowledgements:<br>
+    * the og <a href="https://solidity-by-example.org/">solidity by example</a><br>
+    * many examples adapted <a href="https://github.com/noir-lang/noir/tree/master/crates/nargo_cli/tests/test_data">from the noir repo</a><br>
+</p>
