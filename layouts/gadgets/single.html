@@ -6,6 +6,7 @@
 
 {{ .Content }}
 
+{{- if not .Params.disableTryItOut }}
 <br>
 <details>
     <summary><i>try it out</i></summary>
@@ -23,6 +24,7 @@
         nargo test --show-output
         </pre>
 </details>
+{{- end }}
 <br>
 
 {{- $prev := .PrevInSection }}
