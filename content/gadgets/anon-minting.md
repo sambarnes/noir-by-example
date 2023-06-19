@@ -46,7 +46,17 @@ when minting your thing, split the process into two steps: deposit and claim
 
 ```solidity {.codebox}
 abstract contract Minter is TurboVerifier {
-    // Contract initialization and mappings...
+    /// @notice Time after which claims can be executed.
+    /// @notice Should better anonynimty.
+    uint256 public immutable START;
+
+    mapping(bytes32 => bool) public nullifierHashes;
+    mapping(bytes32 => bool) public commitments;
+
+    constructor(uint256 start) {
+        START = start;
+    }
+    
     function _deposit(bytes32 commitment) internal {...}
     function _claim(bytes calldata proof) internal returns (bool success, address recipient) {...}
 }
@@ -63,16 +73,7 @@ import {TurboVerifier} from "./Verifier.sol";
 
 abstract contract Minter is TurboVerifier {
 
-    /// @notice Time after which claims can be executed.
-    /// @notice Should better anonynimty.
-    uint256 public immutable START;
-    mapping(bytes32 => bool) public nullifierHashes;
-    mapping(bytes32 => bool) public commitments;
 
-    constructor(uint256 start) {
-        START = start;
-    }
-    
     /// @notice Deposit.
     /// @param commitment The commitment.
     function _deposit(bytes32 commitment) internal {
