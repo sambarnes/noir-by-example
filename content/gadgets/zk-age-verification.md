@@ -2,6 +2,7 @@
 title: "zk age verification"
 date: 2023-06-17T15:57:25-06:00
 draft: false
+og: "https://github.com/sambarnes/dizklosure"
 ---
 
 a simplified system where alice can prove she was born before a certain date without revealing her actual birthdate -- or phrased differently:

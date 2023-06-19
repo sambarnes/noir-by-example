@@ -2,9 +2,10 @@
 title: "zk voting"
 date: 2023-06-16T15:57:25-06:00
 draft: false
+og: "https://github.com/noir-lang/noir-starter"
 ---
 
-the classic "hello world" case-study for noir (adapted from [noir-starter](https://github.com/noir-lang/noir-starter))
+the classic "hello world" case-study for noir
 
 say a group is coordinating on some votes, and they want to keep their individual choices secret during the process
 
