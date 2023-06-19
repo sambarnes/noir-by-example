@@ -21,14 +21,11 @@ noirup --nightly
   <h4>and basic zk gadgets</h4>
   <div class="resource-list">
     <ul>
-      {{ range first 5 (where .Site.RegularPages.ByDate "Type" "gadgets") }}
+      {{ range where .Site.RegularPages.ByDate "Type" "gadgets" }}
       <li>
         <a href="{{ .Permalink }}">{{ .Title }}</a>
       </li>
       {{ end }}
-      <li>
-        <a href="/gadgets">...</a>
-      </li>
     </ul>
   </div>
 
