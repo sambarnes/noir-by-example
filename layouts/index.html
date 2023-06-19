@@ -10,14 +10,11 @@ noirup --nightly
   <div class="resource-list">
     <ul>
       {{ $examples := (where .Site.RegularPages.ByDate "Type" "examples")}}
-      {{ range first 5 $examples }}
+      {{ range $examples }}
       <li>
         <a href="{{ .Permalink }}">{{ .Title }}</a>
       </li>
       {{ end }}
-      <li>
-        <a href="/examples">...</a>
-      </li>
     </ul>
   </div>
 
