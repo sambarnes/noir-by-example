@@ -10,7 +10,7 @@ a simplified system where alice can prove she was born before a certain date wit
 * and the signature is valid for the known public key
 * and the birthdate on the certificate is on/before some requirement
 
-## issuing a claim
+### issuing a claim
 
 some signing authority (the hospital, a government, etc) will need to sign a hashed representation of alice's identity (`subject`), attesting to her birthdate -- so we'll construct a standardized payload
 
@@ -50,7 +50,7 @@ fn test_construct_claim_payload() {
 }
 ```
 
-## checking a claim & proving things about it
+### checking a claim & proving things about it
 
 alice wants to generate a proof that her birthdate is before some date
 
