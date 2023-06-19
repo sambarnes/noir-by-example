@@ -94,6 +94,7 @@ the functionality can be exercised with a simplified test:
 #[test]
 fn test_main() {
     // prove a vote for the 0th voter
+    let group_root = 0x20c77d6d51119d86868b3a37a64cd4510abd7bdb7f62a9e78e51fe8ca615a194;
     let hash_path = [
         0x1053e87bed5f2a4f5144b386c5403701212f4b3c21cb14683b6ebdfed16c854d,
         0x1e8e7c1e1f6f65d0d3553e0f715c335f0ccdcc21cda1df7355e6c6e851bccf54,
@@ -101,11 +102,9 @@ fn test_main() {
     let private_key = 0;
     let group_secret = 9;
 
-    let want_nullifier = (
-        0x05c982d312d3c204160b6a692fb7b6e129235599f6c6e4077e794fe1cd7e7a63
-    );
+    let want_nullifier = 0x05c982d312d3c204160b6a692fb7b6e129235599f6c6e4077e794fe1cd7e7a63;
     let got_nullifier = main(
-        0x20c77d6d51119d86868b3a37a64cd4510abd7bdb7f62a9e78e51fe8ca615a194,
+        group_root,
         1,
         1,
         0,
