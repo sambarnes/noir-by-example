@@ -111,8 +111,13 @@ ol {
   margin-bottom: 2em;
 }
 
-/* few more from me */
+/* few more from me and @ryanio */
 .codebox {
   overflow-x: auto;
   background-color: #272822;
+  padding: 20px;
+}
+
+pre {
+  margin-top: 0px;
 }
