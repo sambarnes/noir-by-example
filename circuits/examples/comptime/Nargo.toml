@@ -1,5 +1,9 @@
 [package]
+name = "unconstrained"
+type = "bin"
+name = ""
+type = "bin"
 authors = [""]
-compiler_version = "0.6.0"
+compiler_version = "0.11.1"
 
 [dependencies]
