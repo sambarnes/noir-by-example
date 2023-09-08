@@ -11,6 +11,9 @@ use dep::std;
 
 fn main() {
     std::println("👋 hello world");
+
+    let foo = 17;
+    std::println(f"some field: {foo}");
 }
 
 #[test]
@@ -22,18 +25,16 @@ fn test_main() {
 now, run the tests with `nargo test`
 
 ```bash
-Running 1 test functions...
-Testing test_main...
+[hello_world] Running 1 test functions
+[hello_world] Testing test_main...
 ok
-All tests passed
 ```
 
 add a `--show-output` flag to display the logs
 
 ```bash
-Running 1 test functions...
-Testing test_main...
-👋 hello world
+[hello_world] Running 1 test functions
+[hello_world] Testing test_main... "👋 hello world"
+some field: 0x11
 ok
-All tests passed
 ```
