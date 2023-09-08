@@ -1,5 +1,5 @@
 [package]
-name = ""
+name = "modules_submodules"
 type = "bin"
 authors = [""]
 compiler_version = "0.11.1"
