@@ -3,6 +3,23 @@
 {{ .Content }}
 
 <br>
+<details>
+    <summary><i>checkout locally</i></summary>
+
+    install the noir toolchain if you haven't yet:
+    <pre>
+    curl -L https://noirup.org/install | bash
+    noirup -v aztec
+    </pre>
+
+    then checkout and run the example:
+    <pre>
+    git clone https://github.com/sambarnes/noir-by-example.git
+    cd noir-by-example/circuits/{{ replace .Path ".md" "" }}
+    nargo test --show-output
+    </pre>
+</details>
+<br>
 
 {{- $prev := .PrevInSection }}
 {{- $next := .NextInSection }}
