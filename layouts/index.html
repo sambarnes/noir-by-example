@@ -18,6 +18,17 @@ noirup --nightly
     </ul>
   </div>
 
+  <h4>contracts</h4>
+  <div class="resource-list">
+    <ul>
+      {{ range where .Site.RegularPages.ByDate "Type" "contracts" }}
+      <li>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+
   <h4>and basic zk gadgets</h4>
   <div class="resource-list">
     <ul>
