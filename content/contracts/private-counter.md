@@ -151,3 +151,5 @@ contract PrivateCounter {
 and `nargo compile` to make sure it builds
 
 🤫 🧮
+
+_i uhh still gotta learn how to test these contracts tho_
