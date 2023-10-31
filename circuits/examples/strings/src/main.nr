@@ -32,9 +32,8 @@ fn test_printing_strings() {
     let hash = std::hash::pedersen(array);
     std::println(hash);
 
-    // TODO: Printing structs currently not supported
-    // let s = Test { a: 1, b: 2, c: [3, 4] };
-    // std::println(s);
+    let s = Test { a: 1, b: 2, c: [3, 4] };
+    std::println(s);
 }
 
 struct Test {
