@@ -2,6 +2,6 @@
 name = "zk_age_verification"
 type = "bin"
 authors = [""]
-compiler_version = "0.19.4"
+compiler_version = ">=0.19.4"
 
 [dependencies]
