@@ -1,8 +1,8 @@
 name: CI
 on:
   push:
-  pull_request:
     branches: [main]
+  pull_request:
 
 # TODO: de-duplicate with a shared action later on
 jobs:

@@ -29,7 +29,7 @@ fn test_printing_strings() {
     let array = [1, 2, 3, 5, 8];
     std::println(array);
 
-    let hash = std::hash::pedersen(array);
+    let hash = std::hash::pedersen_hash(array);
     std::println(hash);
 
     let s = Test { a: 1, b: 2, c: [3, 4] };
