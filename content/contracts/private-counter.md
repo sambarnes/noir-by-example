@@ -11,7 +11,7 @@ a contract for users to `increment()` or `get()` their own secret counter
 make sure you're on the right version of noir, and create the project
 
 ```
-noirup -v aztec
+noirup -v v0.18.0-aztec.5
 nargo new --contract --name private_co private-counter
 ```
 
@@ -140,9 +140,9 @@ contract PrivateCounter {
         contract_address: Field,
         nonce: Field,
         storage_slot: Field,
-        preimage: [Field; VALUE_NOTE_LEN],
+        preimage: [Field; VALUE_NOTE_LEN]
     ) -> [Field; 4] {
-        let note_header = NoteHeader { contract_address, nonce, storage_slot };
+        let note_header = NoteHeader { contract_address, nonce, storage_slot, is_transient: false };
         note_utils::compute_note_hash_and_nullifier(ValueNoteMethods, note_header, preimage)
     }
 }

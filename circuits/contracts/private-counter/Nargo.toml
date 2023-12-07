@@ -2,7 +2,7 @@
 name = "private_counter"
 type = "contract"
 authors = [""]
-compiler_version = "0.11.1"
+compiler_version = ">=0.18.0"
 
 [dependencies]
 aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "master" , directory = "aztec" }

@@ -45,7 +45,7 @@ contract PrivateCounter {
 
     // Increment the owner's counter
     #[aztec(private)]
-    fn increment(owner: Field)  {
+    fn increment(owner: Field) {
         let storage = Storage::init(Context::private(&mut context));
         let counts = storage.counts;
         counts.at(owner).add(1, owner);
@@ -65,9 +65,9 @@ contract PrivateCounter {
         contract_address: Field,
         nonce: Field,
         storage_slot: Field,
-        preimage: [Field; VALUE_NOTE_LEN],
+        preimage: [Field; VALUE_NOTE_LEN]
     ) -> [Field; 4] {
-        let note_header = NoteHeader { contract_address, nonce, storage_slot };
+        let note_header = NoteHeader { contract_address, nonce, storage_slot, is_transient: false };
         note_utils::compute_note_hash_and_nullifier(ValueNoteMethods, note_header, preimage)
     }
 }
