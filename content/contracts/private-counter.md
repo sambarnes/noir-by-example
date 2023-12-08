@@ -6,11 +6,15 @@ draft: false
 
 a contract for users to `increment()` or `get()` their own secret counter
 
+🤫 🧮
+
 ---
+
+before we get started, go through Aztec's [installation instructions](https://docs.aztec.network/dev_docs/getting_started/quickstart) for the developer sandbox
 
 make sure you're on the right version of noir, and create the project
 
-```
+```shell {.codebox}
 noirup -v v0.18.0-aztec.5
 nargo new --contract --name private_co private-counter
 ```
@@ -19,11 +23,11 @@ add the contract framework deps to your Nargo.toml
 
 ```toml {.codebox}
 [dependencies]
-aztec = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "master" , directory = "aztec" }
+aztec = { git="https://github.com/AztecProtocol/aztec-packages", tag="aztec-packages-v0.16.7", directory="yarn-project/aztec-nr/aztec" }
 
 # These ones are helpers for private state:
-easy_private_state = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "master" , directory = "easy-private-state" }
-value_note = { git = "https://github.com/AztecProtocol/aztec-nr", tag = "master" , directory = "value-note" }
+value_note = { git="https://github.com/AztecProtocol/aztec-packages", tag="aztec-packages-v0.16.7", directory="yarn-project/aztec-nr/value-note"}
+easy_private_state = { git="https://github.com/AztecProtocol/aztec-packages", tag="aztec-packages-v0.16.7", directory="yarn-project/aztec-nr/easy-private-state"}
 ```
 
 at first the boilerplate looks like this:
@@ -112,7 +116,7 @@ contract PrivateCounter {
 
     // Increment the owner's counter
     #[aztec(private)]
-    fn increment(owner: Field)  {
+    fn increment(owner: Field) {
         let storage = Storage::init(Context::private(&mut context));
         let counts = storage.counts;
         counts.at(owner).add(1, owner);
@@ -142,14 +146,63 @@ contract PrivateCounter {
         storage_slot: Field,
         preimage: [Field; VALUE_NOTE_LEN]
     ) -> [Field; 4] {
-        let note_header = NoteHeader { contract_address, nonce, storage_slot, is_transient: false };
+        let note_header = NoteHeader::new(contract_address, nonce, storage_slot);
         note_utils::compute_note_hash_and_nullifier(ValueNoteMethods, note_header, preimage)
     }
 }
 ```
 
-and `nargo compile` to make sure it builds
+now we'll compile our source & produce a "contract artifacts" file (similar to ABIs you've seen on Ethereum)
 
-🤫 🧮
+```shell {.codebox}
+$ aztec-cli compile .
+Compiling . with wasm backend...
+Writing PrivateCounter artifact to target/PrivateCounter.json
+```
 
-_i uhh still gotta learn how to test these contracts tho_
+finally, we can deploy it and verify the counter's behavior
+
+---
+
+### deploy & test
+
+take the first address in your local accounts
+
+```shell {.codebox}
+$ aztec-cli get-accounts
+Accounts found:
+ Address: 0x06357cc85cb8fc561adbf741f63cd75efa26ffba1c80d431ec77d036d8edf022
+ ...
+```
+
+and deploy our code, specifying a headstart of 100 for the deployer
+
+```shell {.codebox}
+$ aztec-cli deploy target/PrivateCounter.json --args 100 0x06357cc85cb8fc561adbf741f63cd75efa26ffba1c80d431ec77d036d8edf022
+
+Contract deployed at 0x1776ab04d4df75147e1ba7e02ba9173da2bf9da693711c32742ffbbc027b88af
+
+Contract partial address 0x08f6e28ee4dfc8ed387c106b86991fdaa36647006123565138eaf5903b8c54e8
+```
+
+checking current counts, we see that the deployer has 100 while some other address is at zero
+
+```shell {.codebox}
+$ aztec-cli call get \                  
+--args 0x06357cc85cb8fc561adbf741f63cd75efa26ffba1c80d431ec77d036d8edf022 \
+--contract-artifact target/PrivateCounter.json \
+--contract-address 0x1776ab04d4df75147e1ba7e02ba9173da2bf9da693711c32742ffbbc027b88af        
+
+View result:  100n 
+
+$ private-counter git:(main) ✗ aztec-cli call get \
+--args 0x1b18a972d54db0283a04abaace5f7b03c3fca5a4b2c0cf113b457de6ea4991e7 \
+--contract-artifact target/PrivateCounter.json \
+--contract-address 0x1776ab04d4df75147e1ba7e02ba9173da2bf9da693711c32742ffbbc027b88af 
+
+View result:  0n 
+```
+
+now see if you can increment a user's counter with `aztec-cli`
+
+*(hint: feel free to go back to the [aztec-cli quickstart](https://docs.aztec.network/dev_docs/getting_started/quickstart) for the command's usage)*
