@@ -5,3 +5,4 @@ node_modules/
 .vscode
 resources/
 .DS_Store
+target/
