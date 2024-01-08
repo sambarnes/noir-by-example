@@ -21,7 +21,7 @@ fn main(pair: (Field, Field)) {
     // by default, individual elements cannot be mutated
     // pair.0 = 5;
 
-    // with mut, individual elemets can be mutated
+    // with mut, individual elements can be mutated
     let mut mutable = ((0, 0), 1, 2, 3);
     mutable.0 = pair;
     mutable.2 = 7;
